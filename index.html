@@ -17,7 +17,7 @@ a{color:inherit;text-decoration:none}:focus-visible{outline:1px solid var(--g);o
 .wrap{width:min(1080px,90%);margin-inline:auto}
 /* aurora */
 .aur{position:fixed;left:-10%;top:0;width:120%;height:85vh;z-index:0;pointer-events:none;-webkit-mask:linear-gradient(#000 25%,transparent);mask:linear-gradient(#000 25%,transparent)}
-.aur i{position:absolute;top:-8%;height:115%;transform-origin:50% 0;filter:blur(20px);mix-blend-mode:screen;opacity:.55;animation:sw 14s ease-in-out infinite alternate}
+.aur i{position:absolute;top:-8%;height:115%;transform-origin:50% 0;filter:blur(26px);mix-blend-mode:screen;opacity:.55;animation:sw 14s ease-in-out infinite alternate}
 @keyframes sw{0%{transform:skewX(-14deg) scaleY(.75) translateX(-4vw);opacity:.25}50%{opacity:.75}100%{transform:skewX(16deg) scaleY(1.05) translateX(5vw);opacity:.4}}
 .aur::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0,rgba(93,255,192,.08),transparent 65%);mix-blend-mode:screen}
 @keyframes st{to{background-position:260px 0}}
@@ -129,8 +129,8 @@ input,select,textarea{background:rgba(255,255,255,.04);padding:12px 14px;border-
 @media(max-width:900px){.hero h1{font-size:clamp(2.4rem,11vw,3.6rem)}.tri,.sv,.why,.mons{grid-template-columns:1fr}.tri{gap:34px}.sv article:nth-last-child(2),.why div:nth-last-child(2){border-bottom:0}
 .mon:first-child{display:block}.mon:first-child .scr{height:180px;margin-bottom:22px}.mons{gap:44px}
 .flight{padding-left:30px;gap:36px}.flight::before,.flight::after{left:3px;right:auto;top:0;bottom:0;width:1px;height:auto}.flight::after{transform-origin:top;transform:scaleY(var(--p,0))}.st{padding-top:0}.st::before{left:-31px;top:7px}}
-.hrt{position:fixed;z-index:3;display:flex;align-items:center;gap:10px;padding:12px;background:none;border:0;cursor:pointer;color:var(--hc);font:inherit;animation:message-heart-drift var(--hd,28s) ease-in-out var(--hdelay,0s) infinite alternate}.hrt.r{flex-direction:row-reverse}
-@keyframes message-heart-drift{0%{transform:translate3d(0,0,0) rotate(-5deg)}50%{transform:translate3d(var(--hx,18px),var(--hy,-24px),0) rotate(5deg)}100%{transform:translate3d(calc(var(--hx,18px) * -1),calc(var(--hy,-24px) * -1),0) rotate(-4deg)}}
+.hrt{position:fixed;z-index:3;display:flex;align-items:center;gap:10px;padding:12px;background:none;border:0;cursor:pointer;color:var(--hc);font:inherit;animation:message-heart-drift var(--hd,16s) ease-in-out var(--hdelay,0s) infinite}.hrt.r{flex-direction:row-reverse}
+@keyframes message-heart-drift{0%{transform:translate3d(0,0,0) rotate(-6deg)}22%{transform:translate3d(var(--hx1,18px),var(--hy1,-24px),0) rotate(5deg)}48%{transform:translate3d(var(--hx2,-12px),var(--hy2,18px),0) rotate(-3deg)}74%{transform:translate3d(var(--hx3,26px),var(--hy3,8px),0) rotate(6deg)}100%{transform:translate3d(var(--hx4,-18px),var(--hy4,-16px),0) rotate(-5deg)}}
 .hrt svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linejoin:round;opacity:.65;filter:drop-shadow(0 0 6px var(--hc));transition:transform .4s,opacity .4s,fill .4s;animation:hb var(--hb,3.4s) ease-in-out var(--hphase,0s) infinite}
 .hrt:hover svg,.hrt:focus-visible svg,.hrt.show svg{animation:none;opacity:1;transform:scale(1.25);fill:rgba(255,255,255,.12)}
 .hrt em{font-style:normal;font-size:.72rem;letter-spacing:.14em;white-space:nowrap;opacity:0;transform:translateX(-6px);transition:opacity .6s,transform .6s;pointer-events:none;text-shadow:0 0 14px var(--hc)}.hrt.r em{transform:translateX(6px)}
@@ -158,7 +158,7 @@ footer{position:relative}
 </head>
 <body>
 <div id="intro" role="status" aria-label="Loading OnePurpxse">
-  <div class="intro-content"><div class="intro-mark"><img data-intro-logo alt=""><span class="intro-name"><b>One</b>Purpxse</span></div><span class="intro-tag">Ideas, upgraded.</span></div>
+  <div class="intro-content"><div class="intro-mark"><img data-intro-logo alt=""><span class="intro-name"><b>One</b>Purpxse</span></div><span class="intro-tag">Ideas, upgraded</span></div>
 </div>
 <div class="aur" id="aur" aria-hidden="true"></div>
 <canvas id="fx" aria-hidden="true"></canvas>
@@ -284,7 +284,7 @@ function playIntroWhoosh(){
 }
 setTimeout(playIntroWhoosh,850);
 addEventListener('pointerdown',playIntroWhoosh,{once:true,passive:true});
-(()=>{const A=$('#aur'),cl=['#35ffb0','#5dffc0','#4fd8ff','#8f7bff','#b48bff','#40ffc4'];for(let i=0;i<12;i++){const e=document.createElement('i');e.style.cssText='left:'+(i*8.4+rnd(-2,2))+'%;width:'+rnd(2,6.5)+'%;--rc:'+cl[Math.random()*6|0]+';animation-duration:'+rnd(12,26)+'s;animation-delay:-'+rnd(0,20)+'s;height:'+rnd(80,115)+'%';A.appendChild(e)}})();
+(()=>{const A=$('#aur'),cl=['#35ffb0','#5dffc0','#4fd8ff','#8f7bff','#b48bff','#40ffc4'];for(let i=0;i<18;i++){const e=document.createElement('i');e.style.cssText='left:'+(i*5.6+rnd(-2,2))+'%;width:'+rnd(2,6.5)+'%;--rc:'+cl[Math.random()*6|0]+';animation-duration:'+rnd(12,26)+'s;animation-delay:-'+rnd(0,20)+'s;height:'+rnd(80,115)+'%';A.appendChild(e)}})();
 let zg=!rm;try{if(localStorage.getItem('op-zg')==='0')zg=false}catch(e){}
 $('#zg').setAttribute('aria-checked',zg);
 $('#zg').onclick=()=>{if(rm)return;zg=!zg;try{localStorage.setItem('op-zg',zg?'1':'0')}catch(e){}$('#zg').setAttribute('aria-checked',zg);};
@@ -317,10 +317,10 @@ addEventListener('scroll',()=>{onScroll();if(!driftFrame)driftFrame=requestAnima
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.style.transitionDelay=Math.min([...e.target.parentNode.children].indexOf(e.target),5)*90+'ms';e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});$$('.rv').forEach(el=>io.observe(el));
 /* ---- clickable message hearts ---- */
 (()=>{const T=[['Smile, you’re beautiful','#ff8fb1',1],['Love for Palestine','#5dffc0',3],['You have great things ahead','#b48bff',5]],sh=()=>T.slice().sort(()=>Math.random()-.5);
- function put(par,[m,c,n],r,x,y){const b=document.createElement('button');b.type='button';b.className='hrt'+(r?' r':'');const phase=-rnd(0,8),drift=rnd(24,38),pulse=rnd(2.8,5.8),ripple=rnd(3.6,7.2);b.style.cssText='--hc:'+c+';top:'+y+'%;'+(r?'right':'left')+':'+x+'%;--hx:'+rnd(12,32)+'px;--hy:'+rnd(-34,-14)+'px;--hd:'+drift+'s;--hdelay:'+phase+'s;--hb:'+pulse+'s;--hr:'+ripple+'s;--hphase:'+phase+'s';b.setAttribute('aria-label',m);
+ function put(par,[m,c,n],r,x,y){const b=document.createElement('button');b.type='button';b.className='hrt'+(r?' r':'');const phase=-rnd(0,12),drift=rnd(12,20),pulse=rnd(2.8,5.8),ripple=rnd(3.6,7.2);b.style.cssText='--hc:'+c+';top:'+y+'%;'+(r?'right':'left')+':'+x+'%;--hx1:'+rnd(-34,34)+'px;--hy1:'+rnd(-30,30)+'px;--hx2:'+rnd(-34,34)+'px;--hy2:'+rnd(-30,30)+'px;--hx3:'+rnd(-34,34)+'px;--hy3:'+rnd(-30,30)+'px;--hx4:'+rnd(-34,34)+'px;--hy4:'+rnd(-30,30)+'px;--hd:'+drift+'s;--hdelay:'+phase+'s;--hb:'+pulse+'s;--hr:'+ripple+'s;--hphase:'+phase+'s';b.setAttribute('aria-label',m);
   b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.4 3.3 5 6.8 5c2 0 3.5 1.1 5.2 3 1.7-1.9 3.2-3 5.2-3 3.5 0 5.6 3.4 4.3 6.8C19.5 16.4 12 21 12 21z"/></svg><em>'+m+'</em>';
   b.addEventListener('click',()=>{b.classList.add('show');clearTimeout(b._t);b._t=setTimeout(()=>b.classList.remove('show'),3200)});par.appendChild(b)}
- const H=[[0,10,12],[0,38,74],[0,66,22]],F=[[0,80,64],[0,18,84],[0,56,46]];
+ const H=[[0,14,16]],F=[[0,82,70]];
  [[$('#hero'),H],[$('#hz'),F]].forEach(([par,Z])=>{const m=sh();Z.forEach((z,i)=>put(par,m[i],z[0],z[1],z[2]))})})();
 </script>
 </body>
